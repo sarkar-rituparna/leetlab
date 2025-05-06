@@ -1,1 +1,1 @@
- 
+ import {PrismaClient} from '../generated/prisma/index.js';
