@@ -6,8 +6,18 @@ export const register = async (req, res) => {
     const { email, password, name } = req.body;
 
     try {
-        
-        
+        const existingUser = await db.user.findUnique({
+            where: {
+                email
+            }
+        });
+
+        if (existingUser) {
+            return res.status(400).json({
+                error: "User already exists"
+            });
+        }
+
     } catch (error) {
         
     }
