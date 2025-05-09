@@ -4,12 +4,12 @@ import { register, login, logout, check } from "../controllers/auth.controller.j
 
 const authRoutes = express.Router();
 
-authRoutes.post("/register");
+authRoutes.post("/register", register);
 
-authRoutes.post("/login");
+authRoutes.post("/login", login);
 
-authRoutes.post("/logout");
+authRoutes.post("/logout", logout);
 
-authRoutes.post("/check");
+authRoutes.post("/check", check);
 
 export default authRoutes;
