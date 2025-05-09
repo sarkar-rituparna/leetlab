@@ -1,6 +1,8 @@
 import bcrypt from "bcryptjs";
 
-export const register = async (req, res) => {};
+export const register = async (req, res) => {
+    const { email, password, name } = req.body;
+};
 
 export const login = async (req, res) => {};
 
