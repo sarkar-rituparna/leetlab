@@ -48,6 +48,17 @@ export const register = async (req, res) => {
             maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
         });
 
+        res.status(201).json({
+            message: "User created successfully",
+            user: {
+                id: newUser.id,
+                email: newUser.email,
+                name: newUser.name,
+                role: newUser.role,
+                image: newUser.image
+            }
+        });
+
     } catch (error) {
         
     }
