@@ -60,6 +60,10 @@ export const register = async (req, res) => {
         });
 
     } catch (error) {
+        console.error("Error creating user:", error);
+        res.status(500).json({
+            error: "Error creating user"
+        });
         
     }
 };
