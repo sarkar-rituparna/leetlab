@@ -4,7 +4,7 @@ import { UserRole } from "../generated/prisma/index.js";
 import jwt from "jsonwebtoken"; 
 
 
-export const register = async (req, res) => {
+export const register = async (req, res) => { 
     const { email, password, name } = req.body;
 
     try {
