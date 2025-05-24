@@ -1,10 +1,10 @@
 import bcrypt from "bcryptjs";
-import {db} from "../libs/db.js";
+import { db } from "../libs/db.js";
 import { UserRole } from "../generated/prisma/index.js";
-import jwt from "jsonwebtoken"; 
+import jwt from "jsonwebtoken";
 
 
-export const register = async (req, res) => { 
+export const register = async (req, res) => {
     const { email, password, name } = req.body;
 
     try {
@@ -64,7 +64,7 @@ export const register = async (req, res) => {
         res.status(500).json({
             error: "Error creating user"
         });
-        
+
     }
 };
 
@@ -109,20 +109,18 @@ export const login = async (req, res) => {
             maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
         });
 
-        res.status(200).json(
-            {
-                message: "User logged in successfully",
-                user: {
-                    id: user.id,
-                    email: user.email,
-                    name: user.name,
-                    role: user.role,
-                    image: user.image
-                }
-            } 
-        )
+        res.status(200).json({
+            message: "User logged in successfully",
+            user: {
+                id: user.id,
+                email: user.email,
+                name: user.name,
+                role: user.role,
+                image: user.image
+            }
+        })
 
-        
+
     } catch (error) {
         console.error("Error logging in user:", error);
         res.status(500).json({
@@ -131,6 +129,6 @@ export const login = async (req, res) => {
     }
 };
 
-export const logout = async (req, res) => {};
+export const logout = async (req, res) => { };
 
-export const check = async (req, res) => {};
+export const check = async (req, res) => { };
